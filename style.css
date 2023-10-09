@@ -1,0 +1,242 @@
+/* Reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Century Gothic', cursive;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url("https://i.redd.it/p0yf1swpv5p51.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Your other styles remain mostly unchanged */
+
+.container {
+  padding-top: 12vh;
+  width: 100%;
+  min-height: 100vh;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 99%;
+  z-index: 10;
+  height: 12vh;
+  background-color: #00000052;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+/* ... rest of your CSS code ... */
+
+
+  nav .logo {
+    width: 25%;
+    text-align: center;
+    font-size: 18px;
+    text-shadow: 3px 4px 2px black;
+  }
+  
+  nav .menu {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 2px;
+    position: relative;
+  }
+  
+  nav .menu a:hover {
+    color: #00FFFF;
+  }
+  
+  nav .menu a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #d512ab;
+    transition: all 0.3s linear;
+  }
+  
+  nav .menu a:hover::before {
+    width: 100%;
+  }
+  
+  nav .menu a:first-child {
+    color: #00FFFF;
+  }
+  
+  main {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  section h3 {
+    font-size: 33px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px #000;
+  }
+  
+  section h1 {
+    margin: 14px 0px 18px 0;
+    font-size: 45px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #000;
+  }
+  
+  section p {
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #000;
+    margin-bottom: 45px;
+  }
+  
+  section a {
+    padding: 9px 30px;
+    border-radius: 4px;
+    outline: none;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 14px;
+  }
+  
+  section .btn1 {
+    background-color: #fff;
+    color: black;
+  }
+  
+  section .btn1:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.3s linear;
+  }
+  
+  section .btn2 {
+    background-color: #00FFFF;
+    color: black;
+  }
+  
+  section .btn2:hover {
+    background-color: #b200fc;
+    color: #fff;
+    transition: all 0.3s linear;
+  }
+  
+  .nameslideshow:after {
+    color: #00FFFF;
+    animation: changename 7s infinite linear;
+    content: '';
+  }
+  
+  @keyframes changename{
+    0% { content: "Portrait"}
+    25% { content: "Landscape"}
+    50% { content: "Editorial"}
+    75% { content: "Event"}
+    100% { content: "Nature"}
+  }
+
+  .results-summary {
+    border: 1px solid #d512ab;  /* Adjusted border color to match theme */
+    background-color: rgba(0, 0, 0, 0.7);  /* Slightly transparent black background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 40px auto;
+    text-align: center;
+    color: #fff;  /* Set text color to white */
+}
+
+.results-count {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px #000;  /* Added text shadow to match the site's aesthetic */
+}
+
+.results-description {
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px #000;  /* Added text shadow to match the site's aesthetic */
+}
+
+.results-link {
+    display: inline-block;  /* To enable padding and maintain structure */
+    background-color: #00FFFF;  /* Use cyan to match other elements */
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.results-link:hover {
+    background-color: #b200fc;  /* Use purple on hover, as seen in other elements */
+    color: #fff;
+}
+
+.search-box {
+  margin: 30px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+#searchInput {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 70%;
+}
+
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #00FFFF;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #b200fc;
+  color: #fff;
+}
+
+@keyframes infiniteScroll {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 0 100%;
+  }
+}
