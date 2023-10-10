@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Century Gothic', cursive;
+  font-family: Arial, sans-serif; /* Changed to Arial or any sans-serif font you prefer */
 }
 
 body, html {
@@ -45,8 +45,8 @@ nav {
 nav .logo {
   width: 30%; /* Adjusted logo width for mobile */
   text-align: center;
-  font-size: 16px; /* Reduced font size for mobile */
-  text-shadow: 3px 4px 2px black;
+  font-size: 1rem; /* Relative font size for mobile */
+  text-shadow: 0.1875rem 0.25rem 0.125rem black;
 }
 
 nav .menu {
@@ -61,7 +61,7 @@ nav .menu a {
   font-weight: bold;
   margin-bottom: 2px;
   position: relative;
-  font-size: 14px; /* Reduced font size for mobile */
+  font-size: 0.875rem; /* Relative font size for mobile */
 }
 
 nav .menu a:hover {
