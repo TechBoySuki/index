@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .menu.active {
+                display: block;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Additional CSS to center the form and its elements */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* 100% of the viewport height */
+        }
+
+        #booking-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* centering items on the cross-axis */
+            gap: 10px; /* space between child elements */
+        }
+
+        label, input, button {
+            width: 80%; /* taking up 80% of their parent's width */
+            margin-bottom: 10px; /* space between each element */
+        }
+
+        button {
+            padding: 10px; /* vertical padding */
+            cursor: pointer; /* pointer cursor on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="logo">
+                <h1>Restaurant</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="booking.html">Booking</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </nav>
+
+        <!-- Booking Form -->
+        <form id="booking-form">
+            <label for="date">Date and Time:</label>
+            <input type="datetime-local" id="date" name="date" required>
+
+            <label for="party-size">Party Size:</label>
+            <input type="number" id="party-size" name="party-size" min="1" max="10" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("booking-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const date = document.getElementById("date").value;
+            const partySize = document.getElementById("party-size").value;
+            const phone = document.getElementById("phone").value;
+
+            if (partySize < 1 || partySize > 10) {
+                alert("Party size must be between 1 and 10.");
+                return;
+            }
+
+            const bookingDetails = `
+                Date and Time: ${date}
+                Party Size: ${partySize}
+                Phone Number: ${phone}
+            `;
+
+            alert("Booking Details:\n\n" + bookingDetails);
+        });
+    </script>
+</body>
+</html>

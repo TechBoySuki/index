@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Restaurant Here</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .menu.active {
+                display: block;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 60px);
+        }
+        nav {
+            height: 60px;
+        }
+        .btn1, .btn2 {
+            margin-top: 20px;
+        }
+        /* Additional CSS to layout search box horizontally */
+        .search-box {
+            display: flex;
+            gap: 10px;  /* space between the input and button */
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            width: 70%;  /* takes up 70% of the .search-box width */
+        }
+
+        button {
+    display: flex;
+    justify-content: center;  /* centers text horizontally */
+    align-items: center;  /* centers text vertically */
+    width: 25%;
+    height: 30px;  /* specify a height for the button */
+    /* Additional styles */
+    border: none;
+    color: #fff;
+    background-color: #d512ab;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="logo">
+                <h1>Restaurant</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="booking.html">Booking</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </nav>
+
+        <!-- Centered Content -->
+        <div class="content-container">
+            <!-- Search and Results -->
+            <div class="search-and-results">
+                <form onsubmit="event.preventDefault(); displayResults();">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Type your query here...">
+                        <button type="submit">Search</button>
+                    </div>
+                </form>
+                <div class="results-summary">
+                    <!-- Results will display here -->
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main>
+                <section>
+                    <h3>The Good Food</h3>
+                    <h1>Eat Up!</h1>
+                    <a href="info.html" class="btn1">Learn More</a>
+                    <a href="order.html" class="btn2">Place Online Order</a>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function displayResults() {
+            const inputVal = document.getElementById('searchInput').value;
+            const resultsDiv = document.querySelector('.results-summary');
+            resultsDiv.innerHTML = `
+                <p class="results-count">1 Result</p>
+                <p class="results-description">You searched for: ${inputVal}</p>
+                <a href="details.html?q=${encodeURIComponent(inputVal)}" class="results-link">View More Details</a>`;
+        }
+    </script>
+</body>
+
+</html>
