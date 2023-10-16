@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Ordering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>Restaurant</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="booking.html">Booking</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+            </div>
+        </nav>
+
+        <div class="content-container">
+            <main>
+                <section>
+                    <h3>Welcome to Our Online Ordering System</h3>
+                    <h1>Delicious Meals To Your Doorstep!</h1>
+                    <form id="order-form">
+                        <label for="meal">Choose a meal:</label>
+                        <select id="meal" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="pizza">Pizza</option>
+                            <option value="burger">Burger</option>
+                            <option value="pasta">Pasta</option>
+                        </select>
+
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" required>
+
+                        <label for="address">Delivery Address:</label>
+                        <input type="text" id="address" required placeholder="Your address..." />
+
+                        <button type="submit">Place Order</button>
+                        <form id="order-form" action="http://localhost:3000/order" method="POST">
+                            <!--... rest of the form remains the same ...-->
+                        </form>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Your order has been placed successfully!');
+            // Additional JavaScript code to handle order submission would go here.
+        });
+    </script>
+</body>
+</html>
